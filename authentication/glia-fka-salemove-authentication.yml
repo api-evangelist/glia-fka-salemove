@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  Glia Functions CLI API client (github.com/salemove/glia-functions-tools,
+  src/lib/config.js + src/lib/api.js). No public OpenAPI was reachable; the auth
+  model is captured from the first-party API client source.
+docs: https://docs.glia.com
+api_base: https://api.glia.com
+summary:
+  types: [bearer, apiKey]
+  token_style: bearer-token-exchange
+schemes:
+- name: bearerToken
+  type: http
+  scheme: bearer
+  in: header
+  header: Authorization
+  format: 'Bearer <token>'
+  description: >-
+    Requests to the Glia REST API authenticate with a bearer token in the
+    Authorization header. A 401 triggers an automatic token refresh in the
+    first-party client.
+- name: apiKeyExchange
+  type: apiKey
+  description: >-
+    A Glia API Key (key id + secret) plus a Site ID is exchanged for a
+    short-lived bearer token via POST https://api.glia.com/operator_authentication/tokens.
+    Token validity is checked at GET https://api.glia.com/operator_authentication/sessions/current.
+  token_endpoint: https://api.glia.com/operator_authentication/tokens
+  session_endpoint: https://api.glia.com/operator_authentication/sessions/current
+  required_credentials: [site_id, api_key_id, api_key_secret]
