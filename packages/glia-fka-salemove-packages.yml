@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  Public registry probes (CocoaPods trunk, Maven Central search) and the Glia
+  (salemove) GitHub organization. The real Glia customer-service org is
+  github.com/salemove (94 public repos); the github.com/glia org is an unrelated
+  audio-software project and is deliberately excluded.
+packages:
+- language: swift
+  registry: cocoapods
+  name: GliaWidgets
+  url: https://cocoapods.org/pods/GliaWidgets
+  install: pod 'GliaWidgets'
+  source: https://github.com/salemove/ios-sdk-widgets
+  official: true
+  description: Prebuilt iOS UI widgets for embedding Glia digital customer service.
+- language: swift
+  registry: cocoapods
+  name: GliaCoreSDK
+  url: https://cocoapods.org/pods/GliaCoreSDK
+  install: pod 'GliaCoreSDK'
+  official: true
+  description: Core iOS SDK for the Glia engagement platform.
+- language: kotlin
+  registry: maven
+  name: com.glia:android-widgets
+  url: https://central.sonatype.com/artifact/com.glia/android-widgets
+  install: implementation 'com.glia:android-widgets:3.1.1'
+  source: https://github.com/salemove/android-sdk-widgets
+  official: true
+  latest_version: 3.1.1
+  description: Prebuilt Android UI widgets for embedding Glia digital customer service.
+- language: kotlin
+  registry: maven
+  name: com.glia:android-sdk
+  url: https://central.sonatype.com/artifact/com.glia/android-sdk
+  install: implementation 'com.glia:android-sdk:<version>'
+  official: true
+  description: Core Android SDK for the Glia engagement platform.
+- language: javascript
+  registry: github
+  name: glia-functions-tools
+  url: https://github.com/salemove/glia-functions-tools
+  install: git clone https://github.com/salemove/glia-functions-tools && npm install
+  official: true
+  cli: true
+  description: >-
+    Glia Functions CLI (bin glia-functions / glia) for creating and managing
+    Glia Functions serverless JavaScript functions; also ships an MCP server.
+    Distributed via GitHub source (not published to npm).

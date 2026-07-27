@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/salemove/glia-functions-tools
+docs: https://github.com/salemove/glia-functions-tools#readme
+name: Glia Functions CLI
+binaries:
+- glia-functions
+- glia
+description: >-
+  First-party CLI for creating and managing Glia Functions — a serverless
+  JavaScript functions platform (workerd runtime) similar to AWS Lambda or
+  Cloudflare Workers. Supports named profiles / multi-site switching, an
+  interactive and command-driven interface, local dev server, function
+  templates and project scaffolding, and an embedded MCP server for AI
+  assistants.
+prerequisites:
+- Node.js 16+
+- A Glia account with API access
+- Glia Site ID, API Key and Secret
+install:
+- method: git
+  command: git clone https://github.com/salemove/glia-functions-tools && cd glia-functions-tools && npm install
+- method: npm-script
+  command: npm run cli
+- method: global
+  command: npm run install-global
+command_groups:
+- name: functions
+  commands: [createFunction, listFunctions, updateFunction, deleteFunction, createAndDeployVersion, createVersion, invokeFunction, fetchLogs, updateEnvVars, dev]
+- name: kv-store
+  commands: [get, set, delete, list, test-and-set]
+- name: schedules
+  commands: [createSchedule, listSchedules, updateSchedule, deleteSchedule]
+- name: profiles
+  commands: [createProfile, listProfiles, viewProfile, updateProfile, deleteProfile, switchProfile]
+- name: applets
+  commands: [createApplet, deployApplet, listApplets, updateApplet, selectApplet, listAppletTemplates]
+- name: projects
+  commands: [init, deployProject]
+- name: templates
+  commands: [listTemplates]
+- name: mcp
+  commands: [mcp]
+  note: Starts the embedded MCP server (STDIO) — see mcp/glia-fka-salemove-mcp.yml

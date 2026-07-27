@@ -1,0 +1,63 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: https://github.com/salemove/glia-functions-tools/blob/master/mcp-server/server.js
+docs: https://github.com/salemove/glia-functions-tools#mcp-server-for-ai-assistants
+server:
+  name: glia-functions-cli
+  transport: stdio
+  launch: glia-functions mcp
+  runtime: node
+  description: >-
+    First-party MCP (Model Context Protocol) server shipped inside the Glia
+    Functions CLI (github.com/salemove/glia-functions-tools). Lets AI assistants
+    like Claude manage Glia Functions — create/deploy/invoke serverless
+    JavaScript functions, view logs, operate the KV store, and manage scheduled
+    triggers — over STDIO transport. Requires a Glia Site ID, API Key and Secret.
+tools:
+- name: gf_list_functions
+  description: List Glia Functions for the site.
+- name: gf_get_function
+  description: Get a single Glia Function.
+- name: gf_list_function_versions
+  description: List versions of a function.
+- name: gf_deploy_version
+  description: Deploy a function version.
+- name: gf_invoke_function
+  description: Invoke a function with a payload.
+- name: gf_fetch_logs
+  description: Fetch function execution logs.
+- name: gf_create_function
+  description: Create a new function.
+- name: gf_delete_function
+  description: Delete a function.
+- name: gf_update_function
+  description: Update a function.
+- name: gf_create_version
+  description: Create a new function version.
+- name: gf_get_version_task
+  description: Get the status of a version build/deploy task.
+- name: gf_kv_list
+  description: List KV store keys.
+- name: gf_kv_get
+  description: Get a KV store value.
+- name: gf_kv_set
+  description: Set a KV store value.
+- name: gf_kv_delete
+  description: Delete a KV store key.
+- name: gf_kv_test_and_set
+  description: Atomic test-and-set on a KV store key.
+- name: gf_list_scheduled_triggers
+  description: List scheduled function triggers.
+- name: gf_create_scheduled_trigger
+  description: Create a scheduled (cron) function trigger.
+- name: gf_update_scheduled_trigger
+  description: Update a scheduled trigger.
+- name: gf_delete_scheduled_trigger
+  description: Delete a scheduled trigger.
+- name: gf_validate_cron
+  description: Validate a cron expression.
+- name: gf_validate_code
+  description: Validate function source code.
+- name: gf_cron_presets
+  description: Return common cron schedule presets.

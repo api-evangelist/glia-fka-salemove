@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  Glia Functions CLI API client (github.com/salemove/glia-functions-tools) +
+  Glia developer hub (docs.glia.com). Cross-cutting semantics observed in the
+  first-party client; no public OpenAPI was reachable, so envelope/pagination
+  detail is limited to what the client demonstrates.
+api_base: https://api.glia.com
+authentication:
+  style: bearer-token
+  header: 'Authorization: Bearer <token>'
+  refresh: >-
+    On HTTP 401 the client attempts a token refresh (exchange Site ID + API Key
+    for a new bearer token) and retries once. See authentication/.
+content_type: application/json
+error_handling:
+  on_401: automatic token refresh + single retry
+  retry: client implements retry with backoff and response caching
+idempotency:
+  supported: unknown
+  note: >-
+    No documented idempotency-key header was found in the developer hub or the
+    first-party client. Not asserting idempotency support.
+pagination:
+  style: unknown
+  note: List endpoints return an `items` array in the first-party client; no
+    documented cursor/offset convention was captured.
+versioning:
+  scheme: unknown
+  note: No public versioning/date-header policy captured.
+cross_links:
+  authentication: authentication/glia-fka-salemove-authentication.yml
+  well_known: well-known/glia-fka-salemove-well-known.yml

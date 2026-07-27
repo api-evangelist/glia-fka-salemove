@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.glia.com/security
+standards:
+- id: soc2-type2
+  conforms: true
+  evidence: Glia Security & Compliance page lists SOC 2 Type 2 attestation.
+- id: pci-dss
+  conforms: true
+  evidence: Glia Security & Compliance page lists PCI DSS compliance.
+- id: hipaa
+  conforms: true
+  evidence: Glia Security & Compliance page lists HIPAA/HITECH Type 1.
+- id: iso27001
+  conforms: true
+  evidence: ISO/IEC 27001 (via AWS infrastructure).
+- id: ccpa
+  conforms: true
+  evidence: Glia Security & Compliance page lists CCPA.
+- id: fedramp
+  conforms: true
+  evidence: FedRAMP/FISMA (via AWS infrastructure).
+- id: owasp
+  conforms: true
+  evidence: OWASP application-security principles referenced on the security page.
+- id: oauth2
+  conforms: false
+  evidence: API uses site-key/bearer-token exchange, not standard OAuth2 scopes.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public OpenAPI or documented problem+json error format observed.

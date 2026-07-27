@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+probe: false
+source: https://www.glia.com/security
+url: https://www.glia.com/security
+title: Glia Security & Compliance
+certifications:
+- SOC 2 Type 2
+- SOC 1
+- SOC 3
+- PCI DSS
+- HIPAA/HITECH
+- ISO/IEC 27001
+- FedRAMP/FISMA
+- CCPA
+- SSAE-16
+notes: >-
+  Glia publishes a Security & Compliance page listing SOC 2 Type 2, PCI DSS, and
+  HIPAA/HITECH as its own attestations; ISO/IEC 27001, SOC 1/2/3, FedRAMP/FISMA,
+  and SSAE-16 are noted as inherited from AWS infrastructure. Program includes
+  24/7 intrusion detection, scheduled third-party penetration testing, and OWASP
+  application-security practices.
+evidence:
+- source: https://www.glia.com/security
+  keywords: [soc 2 type 2, pci dss, hipaa, iso 27001, fedramp, security & compliance]

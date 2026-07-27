@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of Glia hosts (glia.com, api.glia.com, docs.glia.com)
+notes: >-
+  Only docs.glia.com serves a /.well-known/ document — an RFC 9727 api-catalog
+  linkset (currently an empty linkset). No security.txt, openid-configuration,
+  oauth-authorization-server, or ai-plugin.json is published on any host probed.
+hosts:
+- host: https://docs.glia.com
+  documents:
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"
+    file: glia-fka-salemove-api-catalog.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.glia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://api.glia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
