@@ -8,12 +8,10 @@ server:
   transport: stdio
   launch: glia-functions mcp
   runtime: node
-  description: >-
-    First-party MCP (Model Context Protocol) server shipped inside the Glia
-    Functions CLI (github.com/salemove/glia-functions-tools). Lets AI assistants
-    like Claude manage Glia Functions — create/deploy/invoke serverless
-    JavaScript functions, view logs, operate the KV store, and manage scheduled
-    triggers — over STDIO transport. Requires a Glia Site ID, API Key and Secret.
+  description: First-party MCP (Model Context Protocol) server shipped inside the Glia Functions CLI (github.com/salemove/glia-functions-tools).
+    Lets AI assistants like Claude manage Glia Functions — create/deploy/invoke serverless JavaScript
+    functions, view logs, operate the KV store, and manage scheduled triggers — over STDIO transport.
+    Requires a Glia Site ID, API Key and Secret.
 tools:
 - name: gf_list_functions
   description: List Glia Functions for the site.
@@ -61,3 +59,9 @@ tools:
   description: Validate function source code.
 - name: gf_cron_presets
   description: Return common cron schedule presets.
+deployment:
+  mode: local-stdio
+  verified: searched
+  tools: 23
+  checked: '2026-08-12'
+  source: catalog MCP census
